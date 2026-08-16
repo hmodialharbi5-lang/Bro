@@ -23,11 +23,17 @@ jobs:
           test -f TerrariaServer.dll
           test -f TShockAPI.dll
 
-      - name: Build plugin
-        run: dotnet build AutoHellevator.csproj --configuration Release
+      - name: Restore
+        run: dotnet restore AutoHellevator.csproj
+
+      - name: Build
+        run: dotnet build AutoHellevator.csproj --configuration Release --no-restore
+
+      - name: Find DLL
+        run: find . -name "AutoHellevator.dll" -print
 
       - name: Upload DLL
         uses: actions/upload-artifact@v4
         with:
           name: AutoHellevator
-          path: bin/Release/net10.0/AutoHellevator.dll
+          path: "**/AutoHellevator.dll"
