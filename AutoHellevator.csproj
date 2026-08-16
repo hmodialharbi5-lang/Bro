@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>AutoHellevator</AssemblyName>
@@ -9,15 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="TerrariaServer">
-      <HintPath>TerrariaServer.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-
-    <Reference Include="TShockAPI">
-      <HintPath>TShockAPI.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
+    <PackageReference Include="TShock" Version="6.1.0" />
   </ItemGroup>
 
 </Project>
